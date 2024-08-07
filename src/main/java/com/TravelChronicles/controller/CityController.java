@@ -1,7 +1,8 @@
-package com.TravelChronicles.TravelChronicles.controller;
+package com.TravelChronicles.controller;
 
-import com.TravelChronicles.TravelChronicles.model.CityDTO;
-import com.TravelChronicles.TravelChronicles.service.CityService;
+import com.TravelChronicles.entity.City;
+import com.TravelChronicles.model.CityDTO;
+import com.TravelChronicles.service.CityService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,28 +19,28 @@ public class CityController {
     }
 
     @PostMapping
-    public void saveCity(@RequestBody CityDTO cityDTO) {
-        cityService.saveCity();
+    public void save(@RequestBody CityDTO city) {
+        cityService.save(city);
     }
 
     @GetMapping("/{id}")
     public CityDTO findById(@PathVariable long id) {
-        return cityService.findById();
+        return cityService.findById(id);
     }
 
     @GetMapping
-    public List<CityDTO> getCities() {
-        return cityService.getCities();
+    public List<City> getCities() {
+        return cityService.findAll();
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCity(@PathVariable long id) {
-        cityService.deleteCity(id);
+    public void deleteById(@PathVariable long id) {
+        cityService.deleteById(id);
     }
 
     @PutMapping("/{id}")
-    public void updateCity(@PathVariable long id, @RequestBody CityDTO city) {
-        cityService.updateCity(id, city);
+    public void update(@PathVariable long id, @RequestBody CityDTO city) {
+        cityService.update(id, city);
     }
 
     @PostMapping("/{countryId}/{cityId}")

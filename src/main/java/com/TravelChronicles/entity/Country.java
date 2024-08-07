@@ -1,4 +1,4 @@
-package com.TravelChronicles.TravelChronicles.entity;
+package com.TravelChronicles.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -29,4 +29,7 @@ public class Country {
     @OneToMany(mappedBy = "country")
     private List<City> cities;
 
+    public void add(Country country) {
+
+    }
 }

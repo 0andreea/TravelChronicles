@@ -1,8 +1,9 @@
-package com.TravelChronicles.TravelChronicles.controller;
+package com.TravelChronicles.controller;
 
 
-import com.TravelChronicles.TravelChronicles.model.CountryDTO;
-import com.TravelChronicles.TravelChronicles.service.CountryService;
+import com.TravelChronicles.entity.Country;
+import com.TravelChronicles.model.CountryDTO;
+import com.TravelChronicles.service.CountryService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,23 +19,23 @@ public class CountryController {
     }
 
     @PostMapping
-    public void saveCountry(@RequestBody CountryDTO countryDTO) {
-        countryService.saveCountry();
+    public void save(@RequestBody CountryDTO country) {
+        countryService.save(country);
     }
 
     @GetMapping("/{id}")
     public CountryDTO findById(@PathVariable long id) {
-        return countryService.findById();
+        return countryService.findById(id);
     }
 
     @GetMapping
-    public List<CountryDTO> getCountries() {
-        return countryService.getCountries();
+    public List<Country> getCountries() {
+        return countryService.findAll();
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCountry(@PathVariable long id) {
-        countryService.deleteCountry(id);
+    public void deleteById(@PathVariable long id) {
+        countryService.deleteById(id);
     }
 
     @PutMapping("/{id}")
