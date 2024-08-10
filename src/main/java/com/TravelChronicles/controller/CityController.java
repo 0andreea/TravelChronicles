@@ -47,6 +47,7 @@ public class CityController {
         cityService.addCityToCountry(countryId, cityId);
     }
 
+    @GetMapping("/mostExpensiveCity")
     public List<City> mostExpensiveCity() {
         return cityService.mostExpensiveCity();
     }

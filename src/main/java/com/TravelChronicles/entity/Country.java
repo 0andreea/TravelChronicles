@@ -27,7 +27,7 @@ public class Country {
 
     private String capital;
 
-    @OneToMany(mappedBy = "country", cascade= {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "country", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
     private List<City> cities;
 
