@@ -1,5 +1,6 @@
 package com.TravelChronicles.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -27,7 +28,9 @@ public class City {
 
     private int cost;
 
+
     @ManyToOne
     @JoinColumn(name = "country_id")
+    @JsonIgnore
     private Country country;
 }

@@ -10,11 +10,11 @@ public record CityDTO(String cityName, String foodEaten, String placesVisited, i
 
     public City convertToEntity() {
         City city = new City();
-        city.setCityName(this.cityName());
-        city.setFoodEaten(this.foodEaten());
-        city.setPlacesVisited(this.placesVisited());
-        city.setDaysSpent(this.daysSpent());
-        city.setCost(this.cost());
+        city.setCityName(this.cityName);
+        city.setFoodEaten(this.foodEaten);
+        city.setPlacesVisited(this.placesVisited);
+        city.setDaysSpent(this.daysSpent);
+        city.setCost(this.cost);
         return city;
     }
 }

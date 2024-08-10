@@ -1,7 +1,9 @@
 package com.TravelChronicles.service.impl;
 
+import com.TravelChronicles.entity.City;
 import com.TravelChronicles.entity.Country;
 import com.TravelChronicles.model.CountryDTO;
+import com.TravelChronicles.repository.CityRepository;
 import com.TravelChronicles.repository.CountryRepository;
 import com.TravelChronicles.service.CountryService;
 import org.springframework.stereotype.Component;
@@ -11,9 +13,11 @@ import java.util.List;
 @Component
 public class CountryServiceImpl implements CountryService {
     private final CountryRepository countryRepository;
+    private final CityRepository cityRepository;
 
-    public CountryServiceImpl(CountryRepository countryRepository) {
+    public CountryServiceImpl(CountryRepository countryRepository, CityRepository cityRepository) {
         this.countryRepository = countryRepository;
+        this.cityRepository = cityRepository;
     }
 
     @Override
@@ -29,6 +33,13 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public void deleteById(long id) {
+        Country country = countryRepository.findById(id).
+                orElseThrow(() -> new IllegalArgumentException("Country with Id " + id + " not found"));
+
+        for(City city : country.getCities()) {
+            city.setCountry(null);
+            cityRepository.save(city);
+        }
         countryRepository.deleteById(id);
     }
 

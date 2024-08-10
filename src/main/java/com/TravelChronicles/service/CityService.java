@@ -21,4 +21,5 @@ public interface CityService {
 
     void addCityToCountry(long countryId, long cityId);
 
+    List<City> mostExpensiveCity();
 }

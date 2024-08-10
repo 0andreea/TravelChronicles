@@ -1,5 +1,6 @@
 package com.TravelChronicles.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,10 +27,13 @@ public class Country {
 
     private String capital;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(mappedBy = "country", cascade= {CascadeType.PERSIST, CascadeType.MERGE})
+    @JsonIgnore
     private List<City> cities;
 
-    public void add(Country country) {
+    public void add(City city) {
+        this.cities.add(city);
+        city.setCountry(this);
 
     }
 }

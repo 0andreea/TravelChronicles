@@ -3,7 +3,6 @@ package com.TravelChronicles.controller;
 import com.TravelChronicles.entity.City;
 import com.TravelChronicles.model.CityDTO;
 import com.TravelChronicles.service.CityService;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -44,8 +43,12 @@ public class CityController {
     }
 
     @PostMapping("/{countryId}/{cityId}")
-    public void addCityToCountry (@PathVariable long countryId, @PathVariable long cityId) {
+    public void addCityToCountry(@PathVariable long countryId, @PathVariable long cityId) {
         cityService.addCityToCountry(countryId, cityId);
+    }
+
+    public List<City> mostExpensiveCity() {
+        return cityService.mostExpensiveCity();
     }
 
 }
