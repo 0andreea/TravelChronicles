@@ -1,6 +1,6 @@
-package com.TravelChronicles.model;
+package com.travelchronicles.model;
 
-import com.TravelChronicles.entity.City;
+import com.travelchronicles.entity.City;
 
 public record CityDTO(String cityName, String foodEaten, String placesVisited, int daysSpent, int cost) {
 

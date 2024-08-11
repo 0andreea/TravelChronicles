@@ -1,7 +1,7 @@
-package com.TravelChronicles.service;
+package com.travelchronicles.service;
 
-import com.TravelChronicles.entity.Country;
-import com.TravelChronicles.model.CountryDTO;
+import com.travelchronicles.entity.Country;
+import com.travelchronicles.model.CountryDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

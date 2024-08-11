@@ -1,6 +1,6 @@
-package com.TravelChronicles.model;
+package com.travelchronicles.model;
 
-import com.TravelChronicles.entity.Country;
+import com.travelchronicles.entity.Country;
 
 public record CountryDTO(String countryName, String languageSpoken, String currency, String capital) {
 

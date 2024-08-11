@@ -1,6 +1,6 @@
-package com.TravelChronicles.repository;
+package com.travelchronicles.repository;
 
-import com.TravelChronicles.entity.Country;
+import com.travelchronicles.entity.Country;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

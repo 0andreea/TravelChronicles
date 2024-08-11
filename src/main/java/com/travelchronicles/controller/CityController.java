@@ -1,8 +1,8 @@
-package com.TravelChronicles.controller;
+package com.travelchronicles.controller;
 
-import com.TravelChronicles.entity.City;
-import com.TravelChronicles.model.CityDTO;
-import com.TravelChronicles.service.CityService;
+import com.travelchronicles.entity.City;
+import com.travelchronicles.model.CityDTO;
+import com.travelchronicles.service.CityService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

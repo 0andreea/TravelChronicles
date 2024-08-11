@@ -1,11 +1,11 @@
-package com.TravelChronicles.service.impl;
+package com.travelchronicles.service.impl;
 
-import com.TravelChronicles.entity.City;
-import com.TravelChronicles.entity.Country;
-import com.TravelChronicles.model.CityDTO;
-import com.TravelChronicles.repository.CityRepository;
-import com.TravelChronicles.repository.CountryRepository;
-import com.TravelChronicles.service.CityService;
+import com.travelchronicles.entity.City;
+import com.travelchronicles.entity.Country;
+import com.travelchronicles.model.CityDTO;
+import com.travelchronicles.repository.CityRepository;
+import com.travelchronicles.repository.CountryRepository;
+import com.travelchronicles.service.CityService;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

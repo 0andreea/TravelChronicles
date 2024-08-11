@@ -1,9 +1,9 @@
-package com.TravelChronicles.controller;
+package com.travelchronicles.controller;
 
 
-import com.TravelChronicles.entity.Country;
-import com.TravelChronicles.model.CountryDTO;
-import com.TravelChronicles.service.CountryService;
+import com.travelchronicles.entity.Country;
+import com.travelchronicles.model.CountryDTO;
+import com.travelchronicles.service.CountryService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

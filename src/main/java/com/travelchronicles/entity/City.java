@@ -1,4 +1,4 @@
-package com.TravelChronicles.entity;
+package com.travelchronicles.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
