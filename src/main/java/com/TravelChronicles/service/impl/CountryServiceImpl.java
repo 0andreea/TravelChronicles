@@ -36,7 +36,7 @@ public class CountryServiceImpl implements CountryService {
         Country country = countryRepository.findById(id).
                 orElseThrow(() -> new IllegalArgumentException("Country with Id " + id + " not found"));
 
-        for(City city : country.getCities()) {
+        for (City city : country.getCities()) {
             city.setCountry(null);
             cityRepository.save(city);
         }

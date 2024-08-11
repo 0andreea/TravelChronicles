@@ -51,5 +51,4 @@ public class CityController {
     public List<City> mostExpensiveCity() {
         return cityService.mostExpensiveCity();
     }
-
 }

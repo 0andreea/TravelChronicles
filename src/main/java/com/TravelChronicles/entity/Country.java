@@ -34,6 +34,5 @@ public class Country {
     public void add(City city) {
         this.cities.add(city);
         city.setCountry(this);
-
     }
 }

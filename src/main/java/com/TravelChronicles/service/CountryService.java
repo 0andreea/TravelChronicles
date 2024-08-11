@@ -18,5 +18,4 @@ public interface CountryService {
     void update(long id, CountryDTO countryDTO);
 
     List<Country> findAll();
-
 }

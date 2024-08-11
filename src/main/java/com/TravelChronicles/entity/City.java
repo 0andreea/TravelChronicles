@@ -2,7 +2,6 @@ package com.TravelChronicles.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,7 +26,6 @@ public class City {
     private int daysSpent;
 
     private int cost;
-
 
     @ManyToOne
     @JoinColumn(name = "country_id")

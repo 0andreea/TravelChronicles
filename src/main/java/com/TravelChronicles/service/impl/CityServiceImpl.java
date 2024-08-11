@@ -60,13 +60,13 @@ public class CityServiceImpl implements CityService {
         Country country = countryRepository.findById(countryId).
                 orElseThrow(() -> new IllegalArgumentException("Country with id " + countryId + " not found"));
 
-        if(city.getCountry() != null) {
+        if (city.getCountry() != null) {
             city.getCountry().getCities().remove(city);
         }
 
         city.setCountry(country);
 
-        if(!country.getCities().contains(city)) {
+        if (!country.getCities().contains(city)) {
             country.getCities().add(city);
         }
 
@@ -74,7 +74,7 @@ public class CityServiceImpl implements CityService {
         countryRepository.save(country);
     }
 
-    public List <City> mostExpensiveCity() {
+    public List<City> mostExpensiveCity() {
         return cityRepository.findAllByCostDesc();
     }
 }
