@@ -6,7 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @NoArgsConstructor
 @Setter
@@ -27,12 +28,17 @@ public class Country {
 
     private String capital;
 
-    @OneToMany(mappedBy = "country", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @OneToMany(mappedBy = "country", cascade = {CascadeType.REMOVE}, orphanRemoval = true)
     @JsonIgnore
-    private List<City> cities;
+    private Set<City> cities = new HashSet<>();
 
     public void add(City city) {
         this.cities.add(city);
         city.setCountry(this);
+    }
+
+    public void remove(City city) {
+        this.cities.remove(city);
+        city.setCountry(null);
     }
 }
